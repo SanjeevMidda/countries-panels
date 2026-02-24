@@ -3,27 +3,25 @@ import Panel from "./components/Panel";
 import TEXTDATA from "./data/TextData";
 import COLORS from "./data/Colors";
 
-const noOfPanels = Array.from({ length: 5 }, (_, index) => index);
-
-console.log(noOfPanels);
 function App() {
   // create panel component
   // provide props to these
   // text, area, circle
   // create movement
 
+  const randomColor = () => {
+    const colorOne = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const colorTwo = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+    return [colorOne, colorTwo];
+  };
+
   return (
     <div className="App">
       <div className="mainPanelContainer">
-        {noOfPanels.map((p) => {
-          return <Panel id={p.id} title={p.title} area={p.area} />;
+        {TEXTDATA.map((p) => {
+          return <Panel key={p.id} title={p.title} area={p.area} />;
         })}
-
-        <Panel />
-        <Panel />
-        <Panel />
-        <Panel />
-        <Panel />
       </div>
     </div>
   );
