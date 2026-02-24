@@ -10,3 +10,22 @@
   align-items: center;
   height: 100dvh;
 }
+
+.mainPanelContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.panel {
+  width: 150px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: blue;
+  border-radius: 50%;
+}
