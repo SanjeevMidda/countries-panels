@@ -1,3 +1,9 @@
+:root {
+  --panel-width: 120px;
+  --panel-height: 500px;
+  --panel-move: 650px;
+}
+
 * {
   margin: 0px;
   font-family: Helvetica, sans-serif;
@@ -17,8 +23,8 @@
 }
 
 .panel {
-  width: 120px;
-  height: 500px;
+  width: var(--panel-width);
+  height: var(--panel-height);
   border: 1px solid rgb(197, 197, 197);
   border-radius: 20px;
   display: flex;
@@ -26,14 +32,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px 10px 0px;
-  transform: translateY();
   transition: transform 1000ms ease-in-out;
 }
 
 .circle {
   width: 60px;
   height: 60px;
-  background-color: blue;
+  background: linear-gradient(var(--color1), var(--color2));
   border-radius: 50%;
 }
 
@@ -41,8 +46,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
 
-  h3 {
-    font-weight: 400;
-  }
+.textContent h3 {
+  font-weight: 400;
+}
+
+.movePanel {
+  transform: translateY(var(--panel-move));
 }
