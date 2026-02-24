@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 const Panel = ({ title, area, colors }) => {
-  const [position, setPosition] = useState(false);
+  const [position, setPosition] = useState(true);
 
+  const togglePosition = () => setPosition((prev) => !prev);
   return (
     <div
-      className="panel"
-      style={{ transform: `translateY(${position ? "-100px" : "0px"})` }}
+      className={`panel ${position ? "movePanel" : ""}`}
+      onClick={togglePosition}
     >
       <div className="textContent">
         <h3>{title}</h3>
@@ -14,9 +15,8 @@ const Panel = ({ title, area, colors }) => {
       </div>
       <div
         className="circle"
-        style={{
-          background: `linear-gradient(${colors[0]}, ${colors[1]})`,
-        }}
+        role="button"
+        style={{ "--color1": colors[0], "--color2": colors[1] }}
       ></div>
     </div>
   );
