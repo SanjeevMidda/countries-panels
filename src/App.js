@@ -1,8 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  // create panel component
+  // provide props to these
+  // text, area, circle
+  // create main UI
+
+  return (
+    <div className="App">
+      <div className="mainPanelContainer"></div>
+    </div>
+  );
 }
 
 export default App;
